@@ -14,19 +14,18 @@ function Student(name, gender, age) {
       this.marks.push(...marksToAdd);
     } 
   }
-  Student.prototype.getAverage = function () {
-    if (this.marks.length === 0) {
+  Student.prototype.getAverage = function() {
+    if (this.marks === undefined || this.marks.length === 0) {
       return 0;
     } else {
-      let result = this.marks.reduce((age, item, index, acc) => {
-        age += item;
-        if (index === acc.length - 1) {
-          return age / acc.length;
+      let result = this.marks.reduce((mark, item, index, arr) => {
+        mark += item;
+        if (index === arr.length - 1) {
+          return mark / arr.length;
         }
-        return age;
+        return mark;
       }, 0);
-  
-      return result
+      return result;
     }
   }
   
