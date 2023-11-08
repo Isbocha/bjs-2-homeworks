@@ -23,11 +23,12 @@ class AlarmClock {
       
     removeClock(time) {
     //   delete this.alarmCollection.filter((element) => element.time === time);
-    let alarm = this.alarmCollection.filter((element) => element.time === time)
-    this.alarmCollection.splice(alarm, 1)
-    }
-    
-  
+      if (this.alarmCollection.filter((element) => element.time === time)){
+        let index = this.alarmCollection.indexOf(item => item.time);
+        this.alarmCollection.splice(index)
+        }
+   }
+      
     getCurrentFormattedTime() {
       const time = new Date();
       const hours = (time.getHours() < 10 ? '0' : '') + time.getHours();
