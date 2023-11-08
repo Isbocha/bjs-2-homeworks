@@ -24,8 +24,9 @@ class AlarmClock {
     removeClock(time) {
     //   delete this.alarmCollection.filter((element) => element.time === time);
     let alarm = this.alarmCollection.filter((element) => element.time === time)
-    this.alarmCollection.splice(alarm, 0)
+    this.alarmCollection.splice(alarm, 1)
     }
+    
   
     getCurrentFormattedTime() {
       const time = new Date();
